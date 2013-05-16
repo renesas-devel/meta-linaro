@@ -43,7 +43,7 @@ PROVIDES += "\
 "
 
 PV = "${ELT_VER_MAIN}"
-PR = "r2"
+PR = "r3"
 
 # https://launchpad.net/linaro-toolchain-binaries
 SRC_URI = "file://SUPPORTED"
@@ -276,15 +276,17 @@ FILES_libssp-staticdev = " \
 
 FILES_libgfortran = "${base_libdir}/libgfortran.so.*"
 FILES_libgfortran-dev = " \
+  ${base_libdir}/libgfortran.so"
+FILES_libgfortran-staticdev = " \
   ${base_libdir}/libgfortran.a \
-  ${base_libdir}/libgfortran.so \
   ${base_libdir}/libgfortranbegin.a"
 
 FILES_libmudflap = "${base_libdir}/libmudflap*.so.*"
 FILES_libmudflap-dev = "\
   ${base_libdir}/libmudflap*.so \
-  ${base_libdir}/libmudflap*.a \
   ${base_libdir}/libmudflap*.la"
+FILES_libmudflap-staticdev = "\
+  ${base_libdir}/libmudflap*.a"
 
 FILES_libitm = "${base_libdir}/libitm*${SOLIBS}"
 FILES_libitm-dev = "\
