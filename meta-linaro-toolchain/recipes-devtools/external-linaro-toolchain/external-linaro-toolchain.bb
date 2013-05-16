@@ -310,6 +310,15 @@ FILES_libgomp-staticdev = "\
   "
 ELT_VER_MAIN ??= ""
 
+INSANE_SKIP_libitm += "ldflags"
+INSANE_SKIP_libgomp += "ldflags"
+INSANE_SKIP_libssp += "ldflags"
+INSANE_SKIP_libmudflap += "ldflags"
+INSANE_SKIP_libgfortran += "ldflags"
+INSANE_SKIP_${PN} += "ldflags"
+INSANE_SKIP_${PN}-dev += "ldflags"
+INSANE_SKIP_${PN}-staticdev += "ldflags"
+
 python () {
     if not d.getVar("ELT_VER_MAIN"):
 	raise bb.parse.SkipPackage("External Linaro toolchain not configured (ELT_VER_MAIN not set).")
